@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    PHBuilderman | Roblox Publisher
+  </title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <div class="brand-area">
+
+      <div class="brand">
+        PHBUILDERMAN
+      </div>
+
+      <div class="subtitle">
+        ROBLOX PLACE TOOL
+      </div>
+
+    </div>
+
+    <div class="status">
+      <span class="status-light"></span>
+      READY
+    </div>
+
+  </header>
+
+
+  <main class="container">
+
+    <nav class="tabs">
+
+      <button
+        class="tab active"
+        data-tab="publish"
+      >
+        PUBLISH
+      </button>
+
+      <button
+        class="tab"
+        data-tab="help"
+      >
+        HOW IT WORKS
+      </button>
+
+      <button
+        class="tab"
+        data-tab="logs"
+      >
+        LOG
+      </button>
+
+    </nav>
+
+
+    <!-- PUBLISH -->
+
+    <section
+      id="publish"
+      class="panel tab-panel active"
+    >
+
+      <div class="panel-header">
+
+        <div>
+
+          <h1>
+            PLACE PUBLISHER
+          </h1>
+
+          <p>
+            Publish your Roblox place directly
+            through Open Cloud.
+          </p>
+
+        </div>
+
+        <div class="badge">
+          OPEN CLOUD
+        </div>
+
+      </div>
+
+
+      <div class="notice">
+
+        <strong>
+          SECURITY
+        </strong>
+
+        <span>
+          Your Roblox API key stays on the
+          server and should never be placed
+          inside frontend JavaScript.
+        </span>
+
+      </div>
+
+
+      <form id="publishForm">
+
+        <div class="grid">
+
+          <label>
+            UNIVERSE ID
+
+            <input
+              type="text"
+              name="universeId"
+              id="universeId"
+              placeholder="123456789"
+              required
+            >
+
+          </label>
+
+
+          <label>
+            PLACE ID
+
+            <input
+              type="text"
+              name="placeId"
+              id="placeId"
+              placeholder="987654321"
+              required
+            >
+
+          </label>
+
+        </div>
+
+
+        <label>
+          VERSION TYPE
+
+          <select
+            name="versionType"
+            id="versionType"
+          >
+
+            <option value="Published">
+              Published
+            </option>
+
+          </select>
+
+        </label>
+
+
+        <label>
+          ROBLOX PLACE FILE
+
+          <input
+            type="file"
+            name="placeFile"
+            id="placeFile"
+            accept=".rbxl,.rbxlx"
+            required
+          >
+
+        </label>
+
+
+        <div
+          class="file-box"
+          id="fileBox"
+        >
+          NO FILE SELECTED
+        </div>
+
+
+        <button
+          type="submit"
+          class="publish-button"
+        >
+          ▶ PUBLISH PLACE
+        </button>
+
+      </form>
+
+
+      <div class="progress-area">
+
+        <div class="progress-bar">
+
+          <span id="progressBar"></span>
+
+        </div>
+
+        <div id="progressText">
+          READY
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HELP -->
+
+    <section
+      id="help"
+      class="panel tab-panel"
+    >
+
+      <div class="panel-header">
+
+        <div>
+
+          <h1>
+            HOW IT WORKS
+          </h1>
+
+          <p>
+            Simple Roblox place publishing.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="steps">
+
+        <div class="step">
+
+          <span>
+            01
+          </span>
+
+          <h2>
+            CREATE API KEY
+          </h2>
+
+          <p>
+            Create a Roblox Open Cloud API
+            key for your experience.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <span>
+            02
+          </span>
+
+          <h2>
+            ENTER IDs
+          </h2>
+
+          <p>
+            Enter your Universe ID and
+            Place ID.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <span>
+            03
+          </span>
+
+          <h2>
+            SELECT PLACE
+          </h2>
+
+          <p>
+            Upload an RBXL or RBXLX file
+            exported from Roblox Studio.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <span>
+            04
+          </span>
+
+          <h2>
+            PUBLISH
+          </h2>
+
+          <p>
+            PHBuilderman sends the place
+            file to Roblox Open Cloud.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="warning">
+
+        <strong>
+          NOTE:
+        </strong>
+
+        This version publishes to an
+        existing Roblox place. It does not
+        ask users for their .ROBLOSECURITY
+        cookie.
+
+      </div>
+
+    </section>
+
+
+    <!-- LOG -->
+
+    <section
+      id="logs"
+      class="panel tab-panel"
+    >
+
+      <div class="panel-header">
+
+        <div>
+
+          <h1>
+            ACTIVITY LOG
+          </h1>
+
+          <p>
+            Publishing activity.
+          </p>
+
+        </div>
+
+        <button
+          id="refreshLogs"
+          class="secondary-button"
+        >
+          REFRESH
+        </button>
+
+      </div>
+
+
+      <div
+        id="console"
+        class="console"
+      >
+        NO LOGS YET
+      </div>
+
+    </section>
+
+
+    <footer>
+
+      Made by
+      <strong>
+        PHBuilderman
+      </strong>
+
+      <br>
+
+      Original project • Not affiliated
+      with Roblox or Axo
+
+    </footer>
+
+  </main>
+
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>
